@@ -24,9 +24,9 @@ const Routes: React.FC<RoouteProps> = () => {
       ) : (
         <Stack.Navigator
           initialRouteName="Login"
-          // screenOptions={{
-          //   header: () => null,
-          // }}
+          screenOptions={{
+            header: () => null,
+          }}
         >
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />

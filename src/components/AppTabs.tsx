@@ -2,9 +2,9 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AppPramList } from "../utils/AppsPramsList";
 import HomeScreen from "../screens/HomeScreen";
-import Search from "../screens/Search";
-
 import { Ionicons } from "@expo/vector-icons";
+import HomeStack from "./HomeStack";
+import SearchStack from "./SearchStack";
 
 const Tabs = createBottomTabNavigator<AppPramList>();
 const AppTabs: React.FC = () => {
@@ -27,8 +27,20 @@ const AppTabs: React.FC = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tabs.Screen name="Home" component={HomeScreen} />
-      <Tabs.Screen name="Search" component={Search} />
+      <Tabs.Screen
+        options={{
+          header: () => null,
+        }}
+        name="Home"
+        component={HomeStack}
+      />
+      <Tabs.Screen
+        options={{
+          header: () => null,
+        }}
+        name="Search"
+        component={SearchStack}
+      />
     </Tabs.Navigator>
   );
 };
