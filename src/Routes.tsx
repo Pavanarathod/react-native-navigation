@@ -9,13 +9,15 @@ import Center from "./components/Center";
 import { ActivityIndicator, Text } from "react-native";
 import { AuthContext } from "./utils/AuthProvider";
 import AppTabs from "./components/AppTabs";
-
+import { useAppSelector } from "./hooks/hooks";
 interface RoouteProps {}
 
 const Stack = createNativeStackNavigator<AuthPramsList>();
 
 const Routes: React.FC<RoouteProps> = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useAppSelector((state) => state.auth);
+
+  console.log(user);
 
   return (
     <NavigationContainer>
